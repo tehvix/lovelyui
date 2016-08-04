@@ -71,7 +71,7 @@
             local base   = C_NamePlate.GetNamePlateForUnit(unit)
             local frame  = base.UnitFrame
             parent:ClearAllPoints()
-            parent:SetPoint('TOP', frame, 'BOTTOM', 0, 5)
+            parent:SetPoint('TOP', frame, 'BOTTOM', 0, 2)
             frame:HookScript('OnHide', function()
                 parent:ClearAllPoints()
                 parent:SetPoint('BOTTOM', 0, 155)

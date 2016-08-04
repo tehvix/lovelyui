@@ -185,7 +185,7 @@
 	bar3:SetPoint('TOP', bar2, 'BOTTOM')
 	bar5:SetPoint('TOPRIGHT', f, -150, -27)
 	bar4:SetPoint('TOP', bar5, 'BOTTOM')
-	-- bar6:SetPoint('BOTTOMRIGHT', bar4, 'BOTTOMLEFT', -10, 0)
+	bar6:SetPoint('BOTTOM', f, 165, 25)
 
 	MainMenuBarArtFrame:SetParent(bar1)
     MainMenuBarArtFrame:EnableMouse(false)
@@ -298,9 +298,11 @@
 
 	for i = 1, 10 do
 		local bu = _G['StanceButton'..i]
+		bu:SetParent(bar6)
 		bu:SetSize(18, 18)
 		bu:ClearAllPoints()
 		tinsert(b1, bu)
+		if StanceBarFrame:IsShown() then bar6:Show() else bar6:Hide() end
 		if i == 1 then
 			bu:SetPoint('TOPLEFT', bar6, 4, -4)
 		elseif i == 7 then

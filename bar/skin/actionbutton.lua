@@ -106,27 +106,6 @@
 						ac:SetDrawLayer('OVERLAY', 7)
 					end
 				end
-
-					-- colour border on pushed/checked states
-				--[[if button and not IsSpecificButton(button, 'StanceButton') then
-					if button:GetButtonState()=='PUSHED' then
-						button:SetBeautyBorderColor(123/255, 246/255, 216/255)
-					elseif button:GetChecked()==true then
-						button:SetBeautyBorderColor(238/255, 139/255, 139/255)
-					else
-						button:SetBeautyBorderColor(r, g, b)
-					end
-				end
-
-					-- colour stances separately
-				if beauty and button and IsSpecificButton(button, 'StanceButton') then
-					local _, _, isActive = GetShapeshiftFormInfo(i)
-					if isActive then
-						button:SetBeautyBorderColor(238/255, 139/255, 139/255)
-					else
-						button:SetBeautyBorderColor(r, g, b)
-					end
-				end]]
 			end
 		end
 	end
@@ -207,20 +186,6 @@
 
             local flys = _G[self:GetName()..'FlyoutBorderShadow']
             if flys then flys:SetTexture'' end
-
-                -- colour border on pushed/checked states
-                -- or if button is an item
-            --[[local state = button:GetButtonState()
-            local check = button:GetChecked()
-            if IsEquippedAction(self.action) then
-                button:SetBackdropColor(12/255, 108/255, 50/255)
-            elseif state == 'PUSHED' then
-                button:SetBackdropColor(123/255, 246/255, 216/255)
-            elseif check==true then
-                button:SetBackdropColor(238/255, 139/255, 139/255)
-            else
-                button:SetBackdropColor(0, 0, 0)
-            end]]
         end
     end
 

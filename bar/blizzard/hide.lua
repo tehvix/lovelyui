@@ -2,7 +2,7 @@
 
 	local hide = CreateFrame'Frame'
 	hide:Hide()
-	
+
 	for _, v in pairs({
 			-- main
 		MainMenuBar,

@@ -11,7 +11,7 @@ local TEXTURE = [[Interface\AddOns\lovelyui\art\statusbar.tga]]
 local BACKDROP = {
 	bgFile = [[Interface\ChatFrame\ChatFrameBackground]],
 	tiled = false,
-	insets = {left = -1, right = -1, top = -1, bottom = -1}
+	insets = {left = -3, right = -3, top = -3, bottom = -3}
 }
 local noop = function() return end
 local x
@@ -95,6 +95,7 @@ local PostCastStart = function(Castbar, unit, spell, spellrank)
 	local v  = Castbar:GetParent().Health.value
 	local _, _, _, _, x2 = v:GetParent():GetPoint()
 	if unit:sub(1, 6) == 'player' and not InCombatLockdown() then
+		print'fire'
 		local f  = CreateFrame'Frame'
 		f:SetScript('OnUpdate', function()
 			local _, _, _, _, x3 = v:GetPoint()
@@ -267,10 +268,8 @@ local PostUpdatePower = function(Power, unit, min, max)
 		UnitIsDead(unit) or UnitIsGhost(unit)
 	) then
 		Power:Hide()
-		frame:SetHeight(6)
 	else
 		Power:Show()
-		frame:SetHeight(15)
 	end
 end
 
@@ -344,6 +343,8 @@ local Shared = function(self, unit, isSingle)
 	Health:SetHeight(6)
 	Health:SetStatusBarTexture(TEXTURE)
 	Health:SetStatusBarColor(.25, .25, .25)
+	Health:SetBackdrop(BACKDROP)
+	Health:SetBackdropColor(0, 0, 0, 1)
 
 	Health.frequentUpdates = true
 	Health.colorTapping = true
@@ -359,12 +360,6 @@ local Shared = function(self, unit, isSingle)
 	local HBG = Health:CreateTexture(nil, 'BORDER')
 	HBG:SetAllPoints()
 	HBG:SetTexture(.15, .15, .15)
-
-	local Background = CreateFrame('Frame', nil, self)
-	Background:SetPoint('TOPLEFT', -2, 2)
-	Background:SetPoint('BOTTOMRIGHT', 2, -2)
-	Background:SetBackdrop(BACKDROP)
-	Background:SetBackdropColor(0, 0, 0, 1)
 
 	self.Background = Background
 
@@ -392,16 +387,14 @@ local Shared = function(self, unit, isSingle)
 		Power:SetPoint'LEFT'
 		Power:SetPoint'RIGHT'
 		Power:SetPoint('TOP', Health, 'BOTTOM', 0, -3)
+		Power:SetBackdrop(BACKDROP)
+		Power:SetBackdropColor(0, 0, 0, 1)
 
 		self.Power = Power
 
 		local PBG = Power:CreateTexture(nil, 'BORDER')
 		PBG:SetAllPoints()
 		PBG:SetTexture(.15, .15, .15)
-
-		local Background = Power:CreateTexture(nil, 'BORDER')
-		Background:SetTexture(0, 0, 0, .4)
-		Background:SetAllPoints()
 
 		local PowerPoints = Power:CreateFontString(nil, 'OVERLAY')
 		PowerPoints:SetPoint('LEFT', HealthPoints, 'RIGHT', 0, 0)
@@ -470,6 +463,7 @@ local UnitSpecific = {
 
 		local Health = self.Health
 		Health:SetStatusBarTexture''
+		Health:SetBackdropColor(0, 0, 0, 0)
 
 		Health.value:SetParent(_G['lovelyui_container'])
 		Health.value:ClearAllPoints()
@@ -479,9 +473,7 @@ local UnitSpecific = {
 
 		local Power = self.Power
 		Power:SetStatusBarTexture''
-
-		local Background = self.Background
-		Background:SetBackdrop(nil)
+		Power:SetBackdropColor(0, 0, 0, 0)
 
 		local RaidIcon = self.RIcon
 		RaidIcon:SetFont(STANDARD_TEXT_FONT, 7)
@@ -507,13 +499,8 @@ local UnitSpecific = {
 		Castbar:SetPoint('BOTTOM', UIParent, -1, 162)
 		Castbar:SetSize(100, 5)
 		Castbar:SetStatusBarColor(colour.r*1.4, colour.g*1.4, colour.b*1.4, 1)
-
-		Castbar.bg = CreateFrame('Frame', nil, Castbar)
-		Castbar.bg:SetPoint('TOPLEFT', -2, 2)
-		Castbar.bg:SetPoint('BOTTOMRIGHT', 2, -2)
-		Castbar.bg:SetBackdrop(BACKDROP)
-		Castbar.bg:SetBackdropColor(0, 0, 0, 1)
-		Castbar.bg:SetFrameLevel(0)
+		Castbar:SetBackdrop(BACKDROP)
+		Castbar:SetBackdropColor(0, 0, 0, 1)
 
 		Castbar.text = Castbar:CreateFontString(nil, 'ARTWORK')
 		Castbar.text:SetPoint('LEFT', Castbar, 'RIGHT', 25, 0)
