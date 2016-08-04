@@ -1,0 +1,6 @@
+## Interface: 70000
+## Title: mod artifact
+## Author: modernist
+## Notes: artifact button for items
+
+poweritems.lua

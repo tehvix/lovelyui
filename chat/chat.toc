@@ -1,0 +1,7 @@
+## Interface: 70000
+## Author: modernist
+## Title: lovely chat
+## Notes: chat mod.
+
+chat.lua
+toast.lua

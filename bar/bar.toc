@@ -1,0 +1,8 @@
+## Interface: 70000
+## Author: modernist
+## Title: lovely bar
+## Notes: sliding actionbar mod & ui border
+
+bar.lua
+blizzard\hide.lua
+skin\actionbutton.lua

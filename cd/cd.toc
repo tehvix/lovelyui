@@ -1,0 +1,8 @@
+## Interface: 70000
+## Title: lovely CD
+## Author: Haste, modernist
+## X-eMail: troeks@gmail.com
+## Notes: Display cooldowns as icons.
+
+cd.lua
+bars.lua

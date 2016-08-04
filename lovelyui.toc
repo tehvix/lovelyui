@@ -1,0 +1,62 @@
+## Interface: 70000
+## Title: lovely ui
+## Author: modernist
+## OptionalDeps: Clique, oUF
+## X-credits: haste (c/o oCD, oUF, oUF lily), lyn, zork
+## Notes: a ui
+
+!colour\class.lua
+
+!template\container.lua
+
+artifact\poweritems.lua
+
+aura\auras.lua
+
+bar\bar.lua
+bar\blizzard\hide.lua
+bar\skin\actionbutton.lua
+
+bag\bag.lua
+bag\skin\bag.lua
+bag\skin\bank.lua
+
+cd\cd.lua
+cd\bars.lua
+
+chat\chat.lua
+chat\toast.lua
+
+ct\ct.lua
+ct\text.lua
+
+libs\oUF\oUF.xml
+
+menu\menu.lua
+
+minimap_cluster\minimap.lua
+
+nameplates\nameplates.lua
+nameplates\resource\combopoints.lua
+
+objective_tracker\objective.lua
+
+orderhall\commandbar.lua
+
+panels\loot\art.lua
+panels\loot\hooks.lua
+panels\loot\skin\loot.lua
+
+talking_head\talkinghead.lua
+
+text\zone.lua
+text\hooks.lua
+
+tip\tip.lua
+
+uf\tags.lua
+uf\aurahandling.lua
+uf\border.lua
+uf\layout.lua
+
+world_map\world.lua

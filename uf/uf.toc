@@ -1,0 +1,10 @@
+## Interface: 70000
+## Author: haste, modernist
+## Title: lovely oUF
+## Notes: oUF layout.
+
+oUF\oUF.xml
+tags.lua
+aurahandling.lua
+border.lua
+layout.lua

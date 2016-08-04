@@ -1,0 +1,9 @@
+
+## Interface: 70000
+## Author: modernist
+## Title: lovely bag
+## Notes: bag mod.
+
+bag.lua
+skin\bag.lua
+skin\bank.lua

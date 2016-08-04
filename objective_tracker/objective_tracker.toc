@@ -1,0 +1,6 @@
+## Interface: 70000
+## Author: modernist
+## Title: lovely objective
+## Notes: objective tracker mod.
+
+objective.lua

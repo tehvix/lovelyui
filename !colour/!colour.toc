@@ -1,0 +1,6 @@
+## Interface: 700000
+## Author: modernist
+## Title: mod colour
+## Notes: class colour adjuments
+
+class.lua

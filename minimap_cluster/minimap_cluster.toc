@@ -1,0 +1,6 @@
+## Interface: 70000
+## Author: modernist
+## Title: lovely minimap
+## Notes: minimap mod.
+
+minimap.lua

@@ -1,0 +1,6 @@
+## Interface: 70000
+## Title: lovely talking head
+## Author: modernist
+## Notes: shrunken heads inna minimap
+
+talkinghead.lua
